@@ -19,7 +19,8 @@ Environment variables:
   OPENAI_MAX_OUTPUT_TOKENS  default 900 (reasoning tokens count toward this cap)
   ALLOWED_ORIGINS           comma-separated, e.g. "https://alandelangel.vercel.app"
   UPSTASH_REDIS_REST_URL    optional, enables shared rate limits across instances
-  UPSTASH_REDIS_REST_TOKEN  optional
+  UPSTASH_REDIS_REST_TOKEN  optional (KV_REST_API_URL / KV_REST_API_TOKEN, the names the
+                            Vercel Marketplace integration may create, also work)
   RATE_LIMIT_SALT           optional, salt used to hash visitor IPs
   OPENAI_BASE_URL           optional, only used to point at a mock server in local tests
 """
@@ -170,10 +171,17 @@ _memory_lock = threading.Lock()
 _memory_hits = {}  # key -> list of timestamps (fallback when Redis is not configured)
 
 
+def _redis_config():
+    """Returns (url, token) for Upstash Redis, or (None, None) when it is not configured."""
+    url = os.environ.get('UPSTASH_REDIS_REST_URL') or os.environ.get('KV_REST_API_URL')
+    token = os.environ.get('UPSTASH_REDIS_REST_TOKEN') or os.environ.get('KV_REST_API_TOKEN')
+    return (url, token) if url and token else (None, None)
+
+
 def _redis_command(*args):
     """Runs one Upstash Redis command over its REST API. Returns the result or raises."""
-    url = os.environ['UPSTASH_REDIS_REST_URL'].rstrip('/')
-    token = os.environ['UPSTASH_REDIS_REST_TOKEN']
+    url, token = _redis_config()
+    url = url.rstrip('/')
     req = urllib.request.Request(url, data=json.dumps(list(args)).encode(), method='POST',
                                  headers={'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json'})
     with urllib.request.urlopen(req, timeout=5) as resp:
@@ -198,7 +206,7 @@ def _hit_memory(key, window):
 
 def register_hit(key, window):
     """Counts one request for key inside a fixed window and returns the new count."""
-    if os.environ.get('UPSTASH_REDIS_REST_URL') and os.environ.get('UPSTASH_REDIS_REST_TOKEN'):
+    if _redis_config()[0]:
         try:
             bucket = int(time.time() // window)
             return _hit_redis('chat:%s:%d:%d' % (key, window, bucket), window)

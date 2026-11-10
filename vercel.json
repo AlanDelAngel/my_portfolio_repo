@@ -1,6 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/chat.py": { "maxDuration": 30 }
+    "api/chat.py": {
+      "maxDuration": 30,
+      "excludeFiles": "{assets/**,css/**,js/**,en/**,proyectos/**,certificados/**,*.html,*.md,*.xml,*.txt}"
+    }
   },
   "headers": [
     {
