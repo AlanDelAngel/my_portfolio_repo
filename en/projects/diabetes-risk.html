@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diabetes Risk in Mexican Patients | Alan Del Angel</title>
+<meta name="description" content="A machine learning model that prioritizes confirmatory diabetes testing without glucose or HbA1c. Recall of 0.825 on unseen patients.">
+<meta property="og:title" content="Diabetes Risk in Mexican Patients | Alan Del Angel">
+<meta property="og:description" content="A machine learning model that prioritizes confirmatory diabetes testing without glucose or HbA1c. Recall of 0.825 on unseen patients.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alan Del Angel">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://alandelangel.dev/en/projects/diabetes-risk.html">
+<meta property="og:image" content="https://alandelangel.dev/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alan Adelfo Del Angel Figueroa, Full Stack, data and machine learning developer based in Monterrey, Mexico">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://alandelangel.dev/en/projects/diabetes-risk.html">
+<link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/diabetes.html">
+<link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/diabetes-risk.html">
+<link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/diabetes.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' transform='rotate(45 16 16)' fill='%2399CB38' stroke='%2331521B' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span><span>Alan Del Angel</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <a class="pill pill-solid" href="../../assets/cv/CV_Alan_Del_Angel_EN.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="pill lang-btn" href="../../proyectos/diabetes.html" hreflang="es" lang="es" title="Ver en español" aria-label="Ver en español"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3C9.4 5.6 8.2 8.6 8.2 12s1.2 6.4 3.8 9"/></svg><span>ES</span></a>
+      <button class="pill theme-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#projects">&larr; All projects</a>
+      <p class="eyebrow">Machine Learning</p>
+      <h1>Diabetes risk in Mexican patients</h1>
+      <p class="lede">A model that ranks patients by how likely they are to be high-risk, so clinics can decide who gets a confirmatory test first, without relying on glucose or HbA1c.</p>
+      <dl class="facts">
+        <div><dt>Type</dt><dd>Academic project, 2026</dd></div>
+        <div><dt>Data</dt><dd>2,549 adults from 2,055 households</dd></div>
+        <div><dt>Final model</dt><dd>SVM with an RBF kernel</dd></div>
+        <div><dt>Stack</dt><dd>Python, scikit-learn, SHAP</dd></div>
+      </dl>
+      <figure class="case-cover"><img src="../../assets/img/en/diabetes-roc-pr.png" alt="ROC and precision-recall curves for the final model on the test set"></figure>
+    </div>
+  </header>
+
+  <div class="wrap case-body">
+    <h2>The problem</h2>
+    <div>
+      <p>In many public health programs, confirmatory diabetes tests are a limited resource. The idea was to use data that's often already on file (age, sex, weight, height, lipids, insulin and uric acid) to decide who should be seen first.</p>
+      <p>The model doesn't diagnose anyone. Its output is always reviewed by healthcare staff.</p>
+    </div>
+
+    <h2>Data without leakage</h2>
+    <div>
+      <p>I worked with 24 variables from a national health survey in the style of ENSANUT, Mexico's National Health and Nutrition Survey. Glucose and HbA1c were left out on purpose: the target was built from them, so including them would make the model look perfect on paper and useless in practice.</p>
+      <p>I also tracked down sentinel values (a weight of 222.22 repeated across records, for example) that were producing impossible BMIs, and cleaned them up.</p>
+    </div>
+
+    <h2>Validation by household</h2>
+    <div>
+      <p>People in the same family share habits, so I never split a household between training and test data. I used <code>StratifiedGroupKFold</code> grouped by household, with repeated cross-validation (15 evaluations), and held out a 365-patient test set that I used exactly once, at the very end.</p>
+    </div>
+
+    <h2>Models compared</h2>
+    <div>
+      <div class="table-wrap">
+        <table class="case-table">
+          <thead><tr><th>Model</th><th>ROC-AUC (cross-validation)</th></tr></thead>
+          <tbody>
+            <tr class="hl"><td>RBF SVM (final)</td><td>0.764</td></tr>
+            <tr><td>Random Forest</td><td>0.756</td></tr>
+            <tr><td>Linear SVM</td><td>0.752</td></tr>
+            <tr><td>Gradient Boosting</td><td>0.746</td></tr>
+            <tr><td>Logistic regression</td><td>0.723</td></tr>
+            <tr><td>Neural network (MLP)</td><td>0.720</td></tr>
+            <tr><td>Decision tree</td><td>0.674</td></tr>
+            <tr><td>Baseline (Dummy)</td><td>0.505</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>I tuned hyperparameters with GridSearchCV and RandomizedSearchCV, and picked the final model with a weighted decision matrix (recall, precision, stability, interpretability and cost) instead of simply taking the top score.</p>
+    </div>
+
+    <h2>Result</h2>
+    <div>
+      <p class="big-result">82.5%</p>
+      <p>of high-risk patients caught in the test set (99 out of 120), with an ROC-AUC of 0.765. The decision threshold (0.26) was set to guarantee a recall of at least 0.80, because in healthcare a missed case costs far more than one extra test.</p>
+    </div>
+
+    <h2>What the model learned</h2>
+    <div>
+      <figure class="case-fig"><img src="../../assets/img/en/diabetes-shap.png" alt="SHAP chart for the final model" loading="lazy"><figcaption>Age, insulin and triglycerides carry the most weight.</figcaption></figure>
+    </div>
+
+    <h2>Bias and limitations</h2>
+    <div>
+      <p>Performance holds steady across sex (recall of 0.83 for men and 0.82 for women), but drops to 0.47 for adults aged 20 to 39, where high risk is less common. I documented this in the model card as a limitation healthcare staff need to keep in mind.</p>
+      <figure class="case-fig"><img src="../../assets/img/en/diabetes-bias.png" alt="Model metrics broken down by sex and age group" loading="lazy"></figure>
+    </div>
+
+    <h2>Ready for use</h2>
+    <div>
+      <ul>
+        <li>A full serialized pipeline with an integrity check (SHA-256).</li>
+        <li>An inference script that validates its inputs: missing fields, wrong types and out-of-range values.</li>
+        <li>A monitoring plan that uses PSI to detect shifts in the patient population.</li>
+        <li>A model card covering intended uses, risks and when to retrain.</li>
+      </ul>
+    </div>
+
+    <h2>Resources</h2>
+    <div>
+      <p style="display:flex;flex-wrap:wrap;gap:10px"><a class="pill pill-solid" href="../../assets/docs/Technical_Report_Diabetes_Risk.pdf" target="_blank" rel="noopener">Technical report (PDF)</a> <a class="pill" href="https://github.com/AlanDelAngel/diabetes_pacientes_mexicanos" target="_blank" rel="noopener">View code on GitHub</a></p>
+      <p>The report walks through every decision in the project with its tables and figures, and points to the notebook section that produces each result.</p>
+    </div>
+  </div>
+
+  <div class="wrap next">
+    <a class="back" href="../index.html#projects">&larr; Back to projects</a>
+    <a class="back" href="etl-automation.html">Next: ETL automation &rarr;</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Alan Adelfo Del Angel Figueroa</span><span>Monterrey, Nuevo León, Mexico</span></div></footer>
+<script src="../../js/main.js"></script>
+<script src="../../js/chat.js" defer></script>
+</body>
+</html>

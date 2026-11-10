@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://alandelangel.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/proyectos/erp-freelance.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/erp-freelance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/erp-web-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/erp-freelance.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/en/projects/erp-web-app.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/erp-freelance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/erp-web-app.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/erp-freelance.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/proyectos/diabetes.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/diabetes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/diabetes-risk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/diabetes.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/en/projects/diabetes-risk.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/diabetes.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/diabetes-risk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/diabetes.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/proyectos/etl-power-bi.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/etl-power-bi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/etl-automation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/etl-power-bi.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/en/projects/etl-automation.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/etl-power-bi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/etl-automation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/etl-power-bi.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/certificados/especialidad-ingles.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/certificados/especialidad-ingles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/certificates/english-specialization.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/certificados/especialidad-ingles.html"/>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://alandelangel.dev/en/certificates/english-specialization.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alandelangel.dev/certificados/especialidad-ingles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/certificates/english-specialization.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/certificados/especialidad-ingles.html"/>
+    <priority>0.4</priority>
+  </url>
+</urlset>

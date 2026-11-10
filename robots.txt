@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /proyectos/plantilla-proyecto.html
+
+Sitemap: https://alandelangel.dev/sitemap.xml

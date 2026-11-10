@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ERP Web App | Alan Del Angel</title>
+<meta name="description" content="A custom web ERP for a retail fixture maintenance company operating across Mexico: reports, approvals, crew assignment and automated notifications.">
+<meta property="og:title" content="ERP Web App | Alan Del Angel">
+<meta property="og:description" content="A custom web ERP for a retail fixture maintenance company operating across Mexico: reports, approvals, crew assignment and automated notifications.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alan Del Angel">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://alandelangel.dev/en/projects/erp-web-app.html">
+<meta property="og:image" content="https://alandelangel.dev/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alan Adelfo Del Angel Figueroa, Full Stack, data and machine learning developer based in Monterrey, Mexico">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://alandelangel.dev/en/projects/erp-web-app.html">
+<link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/erp-freelance.html">
+<link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/erp-web-app.html">
+<link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/erp-freelance.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' transform='rotate(45 16 16)' fill='%2399CB38' stroke='%2331521B' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span><span>Alan Del Angel</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <a class="pill pill-solid" href="../../assets/cv/CV_Alan_Del_Angel_EN.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="pill lang-btn" href="../../proyectos/erp-freelance.html" hreflang="es" lang="es" title="Ver en español" aria-label="Ver en español"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3C9.4 5.6 8.2 8.6 8.2 12s1.2 6.4 3.8 9"/></svg><span>ES</span></a>
+      <button class="pill theme-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#projects">&larr; All projects</a>
+      <p class="eyebrow">Freelance</p>
+      <h1>ERP web app</h1>
+      <p class="lede">A custom web app that follows every maintenance request from the moment it's logged in the store to the moment the client signs off on the finished job.</p>
+      <p class="case-note" role="note"><b>Confidential project.</b> At the client's request, their data stays private and the source code can't be published. Screenshots use mock data.</p>
+      <dl class="facts">
+      <div><dt>Role</dt><dd>Full Stack Developer and project lead</dd></div>
+      <div><dt>Timeline</dt><dd>Dec 2025 - Feb 2026</dd></div>
+      <div><dt>Users</dt><dd>60+ staff and 20+ clients</dd></div>
+      <div><dt>Time saved</dt><dd>1 to 2 h a day on reports</dd></div>
+      <div><dt>Stack</dt><dd>Django, Tailwind CSS, PostgreSQL, Docker, Google Cloud</dd></div>
+      </dl>
+      <figure class="case-cover"><img src="../../assets/img/erp/panel.jpg" alt="The admin dashboard, with shortcuts to users, rate tables, reports and statistics, and cards showing the latest reports and their status. Mock data, Spanish interface."></figure>
+    </div>
+  </header>
+
+  <div class="wrap case-body">
+    <h2>Context</h2>
+    <div>
+      <p>The client is a retail visual merchandising company. It installs, repairs and maintains store fixtures (display cases, counters and stands) in shopping centers across Mexico, with its own field crews and a portfolio of corporate clients.</p>
+      <p>Before the app, reports and requests were spread across PowerPoint decks, Excel sheets, Word documents and even WhatsApp chats:</p>
+      <ul>
+        <li>Reports went missing, and it was hard to tell which photos and details belonged to which job.</li>
+        <li>Crew chiefs had no single source of truth for what to fix, where and when.</li>
+        <li>The owner had no clear view of each job's status or the materials it used.</li>
+        <li>Every report looked different, and putting one together took far too long.</li>
+      </ul>
+      <p>The company needed structure, faster communication and documentation everyone could trust.</p>
+    </div>
+
+    <h2>My role</h2>
+    <div>
+      <p>I led the project from start to finish. I gathered requirements with the client, defined the roles and the workflow, coordinated the development team, built the application and ran the Google Cloud infrastructure through delivery.</p>
+    </div>
+
+    <h2>What I built</h2>
+    <div>
+      <ul>
+        <li><b>Roles:</b> five user profiles, each with its own dashboard and permissions.</li>
+        <li><b>Initial report:</b> a guided form with catalogs and photos for every damaged item.</li>
+        <li><b>Approval:</b> the client approves, uploads a purchase order and confirms the date.</li>
+        <li><b>Final report:</b> before and after photos, materials used and a sign-off from the store.</li>
+        <li><b>Automatic PDFs:</b> an internal version and a client-facing one.</li>
+        <li><b>Excel statistics:</b> every fixture serviced, ready for analysis.</li>
+        <li><b>Installable web app:</b> crew chiefs run it straight from their phones.</li>
+      </ul>
+      <figure class="case-fig"><img src="../../assets/img/en/erp-roles.png" alt="Diagram of the app's five roles and what each one can do" loading="lazy"><figcaption>The app's five roles and what each one can do.</figcaption></figure>
+    </div>
+
+    <h2>Automated workflows</h2>
+    <div>
+      <ul>
+        <li><b>Email at every stage:</b> 15 email types tell the right person when a report is created, approved, scheduled, completed, rejected or reactivated. Clients also get reminders to upload their purchase order and invoice acknowledgment.</li>
+        <li><b>Region-based assignment:</b> when a report is assigned, the app only lists crew chiefs who cover the state the store is in.</li>
+        <li><b>Hands-free statistics:</b> data from every completed report flows into the statistics report with no manual entry.</li>
+      </ul>
+      <figure class="case-fig"><img src="../../assets/img/en/erp-flow.png" alt="Diagram of a maintenance report moving through four stages: intake, approval, maintenance and close-out, with an automated email at each one" loading="lazy"><figcaption>How a report moves, from the store floor to close-out.</figcaption></figure>
+    </div>
+
+    <h2>A look inside</h2>
+    <div>
+      <p>Screenshots of the app with mock data. Names, clients, brands and the logo have been replaced. The app was built for a Mexican team, so its interface is in Spanish.</p>
+      <div class="gallery">
+        <figure class="wide phone"><a href="../../assets/img/erp/mobile.png" target="_blank" rel="noopener"><img src="../../assets/img/erp/mobile.png" alt="The admin dashboard on a phone, with its shortcuts stacked in a single column" loading="lazy"></a><figcaption><b>On mobile.</b> The same app adapts to small screens and installs like a native app, so crew chiefs can work right from the store.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/form.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/form.jpg" alt="Form for creating a maintenance report, with general details and the reported damage" loading="lazy"></a><figcaption>Initial report: store details and damage, picked from catalogs.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/repair.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/repair.jpg" alt="Final report section for logging a repair, with damage and repair photos" loading="lazy"></a><figcaption>Final report: before and after photos for each repair.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/scheduling.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/scheduling.jpg" alt="Controls for reassigning the crew chief and scheduling the date and time of the visit" loading="lazy"></a><figcaption>Crew assignment and visit scheduling.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/signature.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/signature.jpg" alt="Section for recording the name, position and signature of the person who receives the work at the store" loading="lazy"></a><figcaption>Sign-off or stamp from the person who receives the work.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/report-p1.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/report-p1.jpg" alt="First page of a generated maintenance report PDF with general details, a damaged item and sample photos" loading="lazy"></a><figcaption>Generated PDF, page 1.</figcaption></figure>
+        <figure><a href="../../assets/img/erp/report-p2.jpg" target="_blank" rel="noopener"><img src="../../assets/img/erp/report-p2.jpg" alt="Second page of the PDF with a second damaged item, a wide shot and the reception signature" loading="lazy"></a><figcaption>Generated PDF, page 2.</figcaption></figure>
+      </div>
+      <p><a class="back" href="../../assets/docs/reporte-mantenimiento-ejemplo.pdf" target="_blank" rel="noopener">Open the sample PDF (in Spanish) &rarr;</a></p>
+    </div>
+
+    <h2>Infrastructure</h2>
+    <div>
+      <p>The app runs in Docker containers on Cloud Run, with the database on Cloud SQL (PostgreSQL), photos and PDFs on Cloud Storage, and deployments through Cloud Build.</p>
+    </div>
+
+    <h2>Challenges</h2>
+    <div>
+      <ul>
+        <li><b>iPhone photos:</b> phones uploaded HEIC images that neither browsers nor the PDF generator could read. The server now converts them on upload.</li>
+        <li><b>Cost vs. performance:</b> I tested several Cloud Run configurations until I found an affordable one that handled stress tests of 10 reports per minute with zero errors.</li>
+        <li><b>One workflow, five roles:</b> every stage checks on the server who's allowed to move a report forward, so no one can approve or edit something that isn't theirs.</li>
+      </ul>
+    </div>
+
+    <h2>Tech stack</h2>
+    <div>
+      <ul class="tags"><li>Python</li><li>Django</li><li>Django REST Framework</li><li>PostgreSQL</li><li>HTML and JavaScript</li><li>Tailwind CSS</li><li>ReportLab</li><li>openpyxl</li><li>Docker</li><li>Cloud Run</li><li>Cloud SQL</li><li>Cloud Storage</li><li>Cloud Build</li></ul>
+    </div>
+
+    <h2>Impact</h2>
+    <div>
+      <p class="big-result">1 to 2 h</p>
+      <p>saved every day on writing and reviewing reports, according to the client. Reports now follow one standard and take <b>under 5 minutes</b> to create and fill out. The app is used by <b>60+ staff members</b>, the company's owners and <b>20+ clients</b>, and every stage of the work comes with its own email notification.</p>
+    </div>
+
+    <h2>Confidentiality</h2>
+    <div>
+      <p>Under our agreement, the client's name, the app's domain, the source code and user data stay private. The diagrams are my own, and the screenshots use mock data with the client's permission.</p>
+    </div>
+  </div>
+
+  <div class="wrap next">
+    <a class="back" href="../index.html#projects">&larr; Back to projects</a>
+    <a class="back" href="diabetes-risk.html">Next: Diabetes risk &rarr;</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Alan Adelfo Del Angel Figueroa</span><span>Monterrey, Nuevo León, Mexico</span></div></footer>
+<script src="../../js/main.js"></script>
+<script src="../../js/chat.js" defer></script>
+</body>
+</html>

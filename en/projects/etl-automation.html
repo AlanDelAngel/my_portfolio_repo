@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ETL Automation and Dashboards | Alan Del Angel</title>
+<meta name="description" content="A Python ETL that pulls Qualtrics surveys through the API and feeds Power BI dashboards: 10+ hours saved per week and a 30% productivity boost.">
+<meta property="og:title" content="ETL Automation and Dashboards | Alan Del Angel">
+<meta property="og:description" content="A Python ETL that pulls Qualtrics surveys through the API and feeds Power BI dashboards: 10+ hours saved per week and a 30% productivity boost.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alan Del Angel">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://alandelangel.dev/en/projects/etl-automation.html">
+<meta property="og:image" content="https://alandelangel.dev/assets/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alan Adelfo Del Angel Figueroa, Full Stack, data and machine learning developer based in Monterrey, Mexico">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://alandelangel.dev/en/projects/etl-automation.html">
+<link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/etl-automation.html">
+<link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' transform='rotate(45 16 16)' fill='%2399CB38' stroke='%2331521B' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span><span>Alan Del Angel</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#education">Education</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <a class="pill pill-solid" href="../../assets/cv/CV_Alan_Del_Angel_EN.pdf" target="_blank" rel="noopener">Resume</a>
+      <a class="pill lang-btn" href="../../proyectos/etl-power-bi.html" hreflang="es" lang="es" title="Ver en español" aria-label="Ver en español"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3C9.4 5.6 8.2 8.6 8.2 12s1.2 6.4 3.8 9"/></svg><span>ES</span></a>
+      <button class="pill theme-btn" id="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#projects">&larr; All projects</a>
+      <p class="eyebrow">Business Intelligence, Tecmilenio</p>
+      <h1>ETL automation and dashboards</h1>
+      <p class="lede">A Python pipeline that pulls institutional surveys from Qualtrics, cleans them and gets them ready for Power BI. No manual downloads, no licensing costs.</p>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>Data Engineer and Developer</dd></div>
+        <div><dt>Timeline</dt><dd>Aug - Dec 2025</dd></div>
+        <div><dt>Team</dt><dd>Business Intelligence</dd></div>
+        <div><dt>Stack</dt><dd>Python, Qualtrics API, Power BI</dd></div>
+      </dl>
+      <figure class="case-cover"><img src="../../assets/img/etl-architecture.png" alt="Pipeline diagram: Qualtrics, a Python script, CSV files on OneDrive and Power BI dashboards, orchestrated by Windows Task Scheduler"></figure>
+    </div>
+  </header>
+
+  <div class="wrap case-body">
+    <h2>Context</h2>
+    <div>
+      <p>The team needed a faster way to pull and analyze the university's institutional surveys. Responses were downloaded from Qualtrics by hand, cleaned in spreadsheets and copied into the folder that fed the dashboards.</p>
+      <ul>
+        <li>Over 10 hours a week went into extracting and cleaning data.</li>
+        <li>The same file existed in several versions, with no standard to keep the data consistent.</li>
+        <li>Dashboards lagged behind because every refresh depended on a manual download.</li>
+      </ul>
+    </div>
+
+    <h2>What I built</h2>
+    <div>
+      <ul>
+        <li><b>API extraction:</b> the script uses Qualtrics' asynchronous export (start the job, poll its status, download the ZIP), with timeouts and clear error messages.</li>
+        <li><b>Cleaning:</b> strips Qualtrics' metadata rows, filters by period and keeps only the columns each dashboard needs.</li>
+        <li><b>Safe loading:</b> writes one CSV per survey to OneDrive. If anything fails, the previous file is left untouched, so Power BI never reads half-written data.</li>
+        <li><b>Scheduled runs:</b> Windows Task Scheduler launches a <code>.bat</code> file that processes every survey listed in a JSON config. Adding a survey takes no code changes.</li>
+        <li><b>Power BI dashboards:</b> I built the participation and exploratory survey dashboards, and redesigned a historical KPI dashboard for the university's new website.</li>
+      </ul>
+    </div>
+
+    <h2>Impact</h2>
+    <div>
+      <p class="big-result">10+ h</p>
+      <p>saved every week on extracting and cleaning surveys, plus a <b>30% productivity boost</b> in the team's reporting. All of it runs on tools the university already had, with no new licenses.</p>
+    </div>
+
+    <h2>Dashboards</h2>
+    <div>
+      <p>Replicas of the dashboards, keeping their original design. To protect the university's information, <b>all data, names, categories and figures are fictitious</b>. They were built for a Spanish-speaking audience, so the labels are in Spanish.</p>
+      <figure class="case-fig"><img src="../../assets/img/dashboard-participation.jpg" alt="Replica of the participation dashboard by campus and period" loading="lazy"><figcaption>Institutional survey participation: progress by campus and by period.</figcaption></figure>
+      <figure class="case-fig"><img src="../../assets/img/dashboard-exploratory.jpg" alt="Replica of the daily tracking dashboard" loading="lazy"><figcaption>Exploratory survey: daily responses tracked against the goal.</figcaption></figure>
+      <figure class="case-fig"><img src="../../assets/img/dashboard-kpis.jpg" alt="Replica of a historical KPI dashboard with generic categories" loading="lazy"><figcaption>Historical KPIs by category (generic names and indicators).</figcaption></figure>
+    </div>
+
+    <h2>Next steps</h2>
+    <div>
+      <ul>
+        <li>An interface that lets people with no programming background set up and run extractions.</li>
+        <li>Moving the survey repositories into a data warehouse with cloud pipelines, as a single source of truth.</li>
+      </ul>
+    </div>
+
+    <h2>Resources</h2>
+    <div>
+      <p><a class="pill pill-solid" href="https://github.com/AlanDelAngel/qualtrics-etl-automation" target="_blank" rel="noopener">View code on GitHub</a></p>
+      <p>The repository includes the script, per-survey configuration, tests against a mocked API and a guide to scheduling runs. It was published with permission and contains no university data.</p>
+    </div>
+  </div>
+
+  <div class="wrap next">
+    <a class="back" href="../index.html#projects">&larr; Back to projects</a>
+    <a class="back" href="erp-web-app.html">Next: ERP web app &rarr;</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Alan Adelfo Del Angel Figueroa</span><span>Monterrey, Nuevo León, Mexico</span></div></footer>
+<script src="../../js/main.js"></script>
+<script src="../../js/chat.js" defer></script>
+</body>
+</html>

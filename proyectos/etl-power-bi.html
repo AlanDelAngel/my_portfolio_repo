@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Automatización ETL y dashboards | Alan Del Angel</title>
+<meta name="description" content="ETL en Python que extrae encuestas de Qualtrics por API y alimenta tableros de Power BI: +10 horas ahorradas por semana y +30% de productividad.">
+<meta property="og:title" content="Automatización ETL y dashboards | Alan Del Angel">
+<meta property="og:description" content="ETL en Python que extrae encuestas de Qualtrics por API y alimenta tableros de Power BI: +10 horas ahorradas por semana y +30% de productividad.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alan Del Angel">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<meta property="og:image" content="https://alandelangel.dev/assets/img/og-es.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alan Adelfo Del Angel Figueroa, desarrollador Full Stack, de datos y machine learning en Monterrey">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<link rel="alternate" hreflang="es" href="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<link rel="alternate" hreflang="en" href="https://alandelangel.dev/en/projects/etl-automation.html">
+<link rel="alternate" hreflang="x-default" href="https://alandelangel.dev/proyectos/etl-power-bi.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='6' width='20' height='20' transform='rotate(45 16 16)' fill='%2399CB38' stroke='%2331521B' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span><span>Alan Del Angel</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="../index.html#educacion">Educación</a></li>
+      <li><a href="../index.html#experiencia">Experiencia</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-tools">
+      <a class="pill pill-solid" href="../assets/cv/CV_Alan_Del_Angel_ES.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="pill lang-btn" href="../en/projects/etl-automation.html" hreflang="en" lang="en" title="View in English" aria-label="View in English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3C9.4 5.6 8.2 8.6 8.2 12s1.2 6.4 3.8 9"/></svg><span>EN</span></a>
+      <button class="pill theme-btn" id="theme-toggle" type="button" aria-label="Cambiar tema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="case-hero">
+    <div class="wrap">
+      <a class="back" href="../index.html#proyectos">&larr; Todos los proyectos</a>
+      <p class="eyebrow">Business Intelligence Tecmilenio</p>
+      <h1>Automatización ETL y dashboards</h1>
+      <p class="lede">Un proceso en Python que extrae las encuestas institucionales de Qualtrics, las limpia y las deja listas para Power BI, sin descargas manuales ni costo de licencias.</p>
+      <dl class="facts">
+        <div><dt>Rol</dt><dd>Ingeniero de datos y desarrollador</dd></div>
+        <div><dt>Periodo</dt><dd>Ago - Dic 2025</dd></div>
+        <div><dt>Área</dt><dd>Business Intelligence</dd></div>
+        <div><dt>Stack</dt><dd>Python, Qualtrics API, Power BI</dd></div>
+      </dl>
+      <figure class="case-cover"><img src="../assets/img/etl-architecture.png" alt="Diagrama del flujo: Qualtrics, script de Python, CSV en OneDrive y tableros de Power BI, orquestado por el Programador de tareas de Windows"></figure>
+    </div>
+  </header>
+
+  <div class="wrap case-body">
+    <h2>Contexto</h2>
+    <div>
+      <p>El área necesitaba agilizar la extracción y el análisis de las encuestas institucionales. Las respuestas se descargaban a mano desde Qualtrics, se limpiaban en hojas de cálculo y se copiaban a la carpeta que alimentaba los tableros.</p>
+      <ul>
+        <li>Más de 10 horas a la semana dedicadas a extraer y limpiar datos.</li>
+        <li>Varias versiones de un mismo archivo, sin un estándar que garantizara la integridad de la información.</li>
+        <li>Tableros que se actualizaban tarde porque dependían de una descarga manual.</li>
+      </ul>
+    </div>
+
+    <h2>Qué construí</h2>
+    <div>
+      <ul>
+        <li><b>Extracción por API:</b> el script usa la exportación asíncrona de Qualtrics (iniciar, consultar estado y descargar el ZIP), con tiempos de espera y mensajes de error claros.</li>
+        <li><b>Limpieza:</b> quita las filas de metadatos de Qualtrics, filtra por periodo y conserva solo las columnas que usa cada tablero.</li>
+        <li><b>Carga segura:</b> genera un CSV por encuesta en OneDrive. Si algo falla, el archivo anterior no se toca, así que Power BI nunca lee datos a medias.</li>
+        <li><b>Ejecución automática:</b> el Programador de tareas de Windows corre un <code>.bat</code> que procesa cada encuesta configurada en un JSON. Agregar una encuesta no requiere modificar el código.</li>
+        <li><b>Tableros en Power BI:</b> creé los tableros de participación e indagación, y rediseñé un tablero de indicadores históricos para el nuevo sitio institucional.</li>
+      </ul>
+    </div>
+
+    <h2>Resultado</h2>
+    <div>
+      <p class="big-result">+10 h</p>
+      <p>ahorradas cada semana en extracción y limpieza de encuestas, y un aumento de <b>30% en la productividad</b> del área en sus reportes. Todo con herramientas que ya existían en la institución, sin pagar licencias nuevas.</p>
+    </div>
+
+    <h2>Tableros</h2>
+    <div>
+      <p>Réplicas de los tableros con el diseño original. Para proteger la información de la institución, <b>todos los datos, nombres, categorías y cifras son ficticios</b>.</p>
+      <figure class="case-fig"><img src="../assets/img/dashboard-participation.jpg" alt="Réplica del tablero de participación por campus y periodo"><figcaption>Participación en encuesta institucional: avance por campus y por periodo.</figcaption></figure>
+      <figure class="case-fig"><img src="../assets/img/dashboard-exploratory.jpg" alt="Réplica del tablero de seguimiento diario"><figcaption>Encuesta de indagación: seguimiento diario de participaciones contra la meta.</figcaption></figure>
+      <figure class="case-fig"><img src="../assets/img/dashboard-kpis.jpg" alt="Réplica de un tablero de indicadores históricos con categorías genéricas"><figcaption>Tablero de indicadores históricos por categoría (nombres e indicadores genéricos).</figcaption></figure>
+    </div>
+
+    <h2>Siguientes pasos</h2>
+    <div>
+      <ul>
+        <li>Una interfaz para que personas sin conocimientos de programación configuren y ejecuten extracciones.</li>
+        <li>Migrar los repositorios de encuestas a un Data Warehouse con flujos en la nube, como fuente única de la verdad.</li>
+      </ul>
+    </div>
+
+    <h2>Recursos</h2>
+    <div>
+      <p><a class="pill pill-solid" href="https://github.com/AlanDelAngel/qualtrics-etl-automation" target="_blank" rel="noopener">Ver código en GitHub</a></p>
+      <p>El repositorio incluye el script, la configuración por encuesta, pruebas con una API simulada y la guía para programar la ejecución. Se publicó con autorización y sin datos de la institución.</p>
+    </div>
+  </div>
+
+  <div class="wrap next">
+    <a class="back" href="../index.html#proyectos">&larr; Volver a proyectos</a>
+    <a class="back" href="erp-freelance.html">Siguiente: Aplicación web ERP &rarr;</a>
+  </div>
+</main>
+
+<footer><div class="wrap"><span>Alan Adelfo Del Angel Figueroa</span><span>Monterrey, Nuevo León</span></div></footer>
+<script src="../js/main.js"></script>
+<script src="../js/chat.js" defer></script>
+</body>
+</html>
